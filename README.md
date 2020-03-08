@@ -28,7 +28,7 @@ Using this code I decrypted the key, with some manipulation you’re also able t
 As we can see, the app uses pickle for serialization which is dangerous, as pickle known to be vulnerable to attacks.
 We can serialize an object like this:
 
-![Image description](https://i.imgur.com/2JrLcVd.png)
+![Image description](https://imgur.com/b29c9bfb-8d41-4a15-9fde-9d0fc12f528a)
 
 The __reduce__ function will be triggered by pickle.loads which will run the command in the string.
 
