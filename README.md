@@ -2,11 +2,17 @@
 A solution for the zer0pts ctf notepad challenge
 
 At first sight we see a flask web application.
+
 The app manages notes that created by a user. Every user can create, edit and delete his notes, which is saved in the session flask variable which is saved encrypted in the user cookie. 
+
 The key of the encryption is a part of the flask application config and is defined in line `9`.
+
 You can look at the code and see that the data is saved under the session member `savedata`, which is an array of objects that represents notes.
+
 The application uses Jinja2 as the template library as it’s the default of the framework. 
+
 The application is kinda stateless so we knew it must be some kind of command injection, which is common in flask.
+
 Looking at the 404 handler we see some place where we can inject a template string, which will be interpolated at server side. The handler checks whether the referrer is from the same host and that it does not exceed 16 characters after the host name itself, so we are limited in the string we can enter.
 
 ![Image description](https://i.imgur.com/NxsyZmN.png)
