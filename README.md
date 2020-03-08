@@ -30,7 +30,9 @@ We can serialize an object like this:
 
 ![Image description](https://i.imgur.com/WicXOME.png)
 
-The __reduce__ function will be triggered by pickle.loads which will run the command in the string. We redirect the output to our server and we got the output of `ls`, we see a list of files and among them a file called `flag`. We construct a new payload, this time with `cat flag` and we got it - zer0pts{fl4sk_s3ss10n_4nd_pyth0n_RCE} :)
+The `__reduce__` function will be triggered by pickle.loads which will run the command in the string. We redirect the output to our server and we got the output of `ls`, we see a list of files and among them a file called `flag`. We construct a new payload, this time with `cat flag` and we got it - zer0pts{fl4sk_s3ss10n_4nd_pyth0n_RCE} :)
+
+Thanks: Daniel Reisel, Yuval Kovacs
 
 References:
 https://root4loot.com/post/exploiting_cpickle/
