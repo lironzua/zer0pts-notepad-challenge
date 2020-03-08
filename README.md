@@ -28,11 +28,11 @@ Using this code I decrypted the key, with some manipulation you’re also able t
 As we can see, the app uses pickle for serialization which is dangerous, as pickle known to be vulnerable to attacks.
 We can serialize an object like this:
 
-![Image description](https://imgur.com/b29c9bfb-8d41-4a15-9fde-9d0fc12f528a)
+![Image description](https://i.imgur.com/WicXOME.png)
 
-The __reduce__ function will be triggered by pickle.loads which will run the command in the string.
+The __reduce__ function will be triggered by pickle.loads which will run the command in the string. We redirect the output to our server and we got the output of `ls`, we see a list of files and among them a file called `flag`. We construct a new payload, this time with `cat flag` and we got it - zer0pts{fl4sk_s3ss10n_4nd_pyth0n_RCE} :)
 
-
-You can read more about pwning pickle here: https://root4loot.com/post/exploiting_cpickle/
-You can read more about flask injections here: https://nvisium.com/blog/2015/12/07/injecting-flask.html
+References:
+https://root4loot.com/post/exploiting_cpickle/
+https://nvisium.com/blog/2015/12/07/injecting-flask.html
 
